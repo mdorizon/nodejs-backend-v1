@@ -1,0 +1,20 @@
+<%- include('partials/header'); %>
+
+    <h1>
+        <%= title %>
+    </h1>
+
+    <form action="/additem" method="get">
+        <input type="text" name="name" id="name">
+        <input type="number" name="price" id="price">
+        <input type="submit" value="ajouter">
+    </form>
+
+    <ul>
+        <% itemsList.forEach(function(item) { %>
+            <li><%- item.name %> | <%- item.price %> €</li>
+            <a href="/items/<%- item.id %>">Voir détails</a>
+        <% }); %>
+    </ul>
+
+<%- include('partials/footer'); %>
