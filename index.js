@@ -34,7 +34,7 @@ app.get('/additem', function(req, res) {
 })
 
 app.get('/items/:id', function(req, res) {
-    function findID(list) {return list.id == req.params["id"];}
+    function findID(list) {return list.id == req.params.id;}
     res.render("single", {
         item: itemsList.find(findID),
     })
